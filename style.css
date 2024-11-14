@@ -1,0 +1,565 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F6F6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+@media print {
+    @page {
+        margin: 0cm;
+    }
+
+    .section-one,
+    #resumeForm,
+    #printBtn {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    #resumeOutput {
+        margin-top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+    }
+
+    .template {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0;
+    }
+}
+
+/* animations  */
+
+.upDownAnim {
+    animation: up-down 2.5s infinite;
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(3%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.scaler {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.scaler:hover {
+    transform: scale(1.02);
+}
+
+/* header */
+
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: white;
+    box-shadow: 0 2px 12px silver;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.head h3 {
+    font-size: 1.6rem;
+}
+
+.head nav {
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+}
+
+.head nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.1s ease;
+
+    &:hover {
+        color: #adadad;
+    }
+}
+
+/* intro page  */
+
+.introduction {
+    z-index: 2;
+    width: 800px;
+    padding: 2rem;
+}
+
+.introduction h1 {
+    font-size: 50px;
+    color: #333;
+}
+
+.introduction p {
+    margin: 1rem 0 2rem 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.introduction button {
+    color: #333;
+    font-size: large;
+    font-weight: 600;
+    padding: 1.2rem 6rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: transparent;
+    transition: color 0.1s ease, background-color 0.1s ease;
+
+    &:hover {
+        background-color: #333;
+        color: #EDEDED;
+    }
+}
+
+.section-one .cont .imageCont {
+    width: fit-content;
+    height: 70%;
+}
+
+.section-one .cont .imageCont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* gdfgdsfgsdfgsdfg=================dfhsghsgsfgsghsfh */
+
+#resumeOutput {
+    margin-top: 60px;
+}
+
+.section-one {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #EDEDED;
+    box-shadow: 0 2px 16px silver;
+}
+
+.section-one:after {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: url("https://i.imgur.com/PsjPzdO.png");
+    background-size: 200px;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+/* this (pink blue) blob is copied from a web  */
+.section-one .blobs {
+    z-index: 0;
+    width: 50vh;
+    height: 50vh;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.section-one .blobs .blob {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #8ceeff;
+    mix-blend-mode: multiply;
+    filter: blur(80px);
+}
+
+.section-one .blobs .blob.a {
+    background-color: #fdb6ff;
+    -webkit-animation: circular2 40s linear infinite;
+    animation: circular2 40s linear infinite;
+}
+
+.section-one .blobs .blob.b {
+    background-color: #f7a4ff;
+    -webkit-animation: circular 20s linear infinite;
+    animation: circular 20s linear infinite;
+}
+
+.section-one .blobs .blob.c {
+    -webkit-animation: circular 60s linear infinite;
+    animation: circular 60s linear infinite;
+}
+
+@-webkit-keyframes circular {
+    0% {
+        transform: translate(0, -150px);
+    }
+
+    25% {
+        transform: translate(150px, 0);
+    }
+
+    50% {
+        transform: translate(0, 150px);
+    }
+
+    75% {
+        transform: translate(-150px, 0);
+    }
+
+    100% {
+        transform: translate(0, -150px);
+    }
+}
+
+@keyframes circular {
+    0% {
+        transform: translate(0, -150px);
+    }
+
+    25% {
+        transform: translate(150px, 0);
+    }
+
+    50% {
+        transform: translate(0, 150px);
+    }
+
+    75% {
+        transform: translate(-150px, 0);
+    }
+
+    100% {
+        transform: translate(0, -150px);
+    }
+}
+
+@-webkit-keyframes circular2 {
+    0% {
+        transform: translate(0, 150px);
+    }
+
+    25% {
+        transform: translate(-150px, 0);
+    }
+
+    50% {
+        transform: translate(0, -150px);
+    }
+
+    75% {
+        transform: translate(150px, 0);
+    }
+
+    100% {
+        transform: translate(0, 150px);
+    }
+}
+
+@keyframes circular2 {
+    0% {
+        transform: translate(0, 150px);
+    }
+
+    25% {
+        transform: translate(-150px, 0);
+    }
+
+    50% {
+        transform: translate(0, -150px);
+    }
+
+    75% {
+        transform: translate(150px, 0);
+    }
+
+    100% {
+        transform: translate(0, 150px);
+    }
+}
+/* this (pink blue) blob is copied from a web ↑ */
+
+.section-one .cont {
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.template {
+    min-height: 80vh;
+    width: 100%;
+}
+
+h1,
+h2 {
+    margin: 0;
+    color: #476b70;
+}
+
+.generateBtn,
+#printBtn {
+    display: inline-block;
+    padding: 16px 20px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #218838;
+        box-shadow: 6px 6px 3px #afcdaf;
+    }
+
+    &:active {
+        background-color: #133750;
+    }
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type='file'] {
+    width: fit-content;
+    background: white;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: none;
+    box-shadow: 6px 8px 3px #e5eaea;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+
+    &::placeholder {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    &:focus {
+        outline: none;
+        transform: scale(1.005);
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.extra-input-fields-cont {
+    display: flex;
+    gap: 8px;
+}
+
+.extra-input-fields-cont textarea {
+    width: 50%;
+}
+
+#resumeForm {
+    width: 75%;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 4rem;
+    box-shadow: 2px 12px 20px #cdd4d4;
+}
+
+#resumeForm .fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .section-one .cont {
+        margin-top: 8rem;
+        display: block;
+        text-align: center;
+        width: 80%;
+        z-index: 10;
+    }
+
+    .section-one .cont .imageCont {
+        height: 30%;
+        margin: auto;
+    }
+
+    .introduction {
+        width: 100%;
+        padding: 12px;
+        z-index: 10;
+    }
+
+    .introduction h1 {
+        line-height: 2.7rem;
+    }
+
+    .section-one .blobs {
+        top: 90%;
+        left: 50%;
+    }
+
+    .template {
+        width: 100%;
+    }
+
+    #resumeForm {
+        width: 95%;
+        margin: auto;
+        margin-top: 2.5rem;
+    }
+}
+
+@media (max-width: 760px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    #resumeForm {
+        width: 100%;
+        padding: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    .section-one .cont {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .head {
+        padding: 1.2rem 1rem;
+    }
+
+    .head nav {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .head h3 {
+        font-size: 1.2rem;
+    }
+
+    .introduction h1 {
+        font-size: 2.3rem;
+        line-height: 2rem;
+    }
+
+    .introduction p {
+        font-size: 1rem;
+        margin: 0.9rem 0;
+    }
+
+    .introduction button {
+        padding: 1rem 2rem;
+    }
+
+    .section-one .cont {
+        margin-top: 6rem;
+    }
+
+    #resumeForm {
+        padding: 16px;
+    }
+
+    #resumeForm .fieldset,
+    .extra-input-fields-cont {
+        gap: 4px;
+    }
+
+    .generateBtn,
+    #printBtn{
+        padding: 0.7rem 1rem;
+        font-size: medium;
+    }
+}

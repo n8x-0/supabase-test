@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1*.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="template.css">
+</head>
+
+<body>
+    <div class="section-one">
+        <div class="blobs">
+            <div class="blob a">a</div>
+            <div class="blob b">b</div>
+            <div class="blob c">c</div>
+        </div>
+        <nav class="head">
+            <h3>Asfa</h3>
+            <nav>
+                <a href=""><span>Linkedin</span></a>
+                <a href=""><span>Portfolio</span></a>
+                <a href=""><span>Github</span></a>
+            </nav>
+        </nav>
+        <div class="cont">
+            <div class="introduction">
+                <h1 class="">Welcome to the Resume builder, create your&apos;s now</h1>
+                <p>
+                    Effortlessly create a professional resume! Fill out our simple form, and our templates will
+                    instantly turn your info into a polished resume, ready to share and download. Start today and take
+                    the first step toward your next great opportunity!
+                </p>
+                <a href="#resumeForm"><button class="scaler">Create my resume</button></a>
+            </div>
+            <div class="imageCont upDownAnim">
+                <img src="resume.png" alt="resume.png">
+            </div>
+        </div>
+    </div>
+
+    <form id="resumeForm">
+        <div class="fieldset">
+            <h2>Personal Information</h2>
+            <inputsContainer class="fieldset">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone." required>
+                <input type="file" id="imageInp" name="image" placeholder="Phone.">
+            </inputsContainer>
+        </div>
+        <div class="fieldset">
+            <h2>Education</h2>
+            <textarea id="education1" placeholder="Education 1*" rows="1" required></textarea>
+            <div class="extra-input-fields-cont">
+                <textarea id="education2" rows="1" placeholder="BS from SSUET"></textarea>
+                <textarea id="education3" rows="1" placeholder="GenAI from GIAIC"></textarea>
+            </div>
+        </div>
+        <div class="fieldset">
+            <h2>Experience</h2>
+            <textarea id="experience1" placeholder="Experience 1*" rows="1" required></textarea>
+            <div class="extra-input-fields-cont">
+                <textarea id="experience2" rows="1" placeholder="1 year of creating web applications"></textarea>
+                <textarea id="experience3" rows="1" placeholder="4 years of experience as a teacher"></textarea>
+            </div>
+        </div>
+        <div class="fieldset">
+            <h2>Skills</h2>
+            <textarea id="skills1" placeholder="Skill 1*" rows="1" required></textarea>
+            <div class="extra-input-fields-cont">
+                <textarea id="skills2" rows="1" placeholder="web developer"></textarea>
+                <textarea id="skills3" rows="1" placeholder="TypeScript, nextJS"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="generateBtn">Generate Resume</button>
+    </form>
+
+    <div id="resumeOutput"></div>
+    <button id="printBtn">Generate to print</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
