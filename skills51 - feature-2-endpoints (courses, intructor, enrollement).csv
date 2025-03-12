@@ -1,0 +1,21 @@
+isProtected,category,method,endpoint,body (req only),description
+yes,user,GET,/api/v1/user/profile,read uid from req.user,user profile
+no,home,GET,/api/v1/user/allcourses,,get all courses to display
+yes,user,GET,/api/v1/user/course,,user enrolled courses
+yes,user ,POST,/api/v1/user/course,{courseID} + uid from req.user,get enrolled to a course
+yes,user,DELETE,/api/v1/user/{courseid},,del enrolled course
+yes,user,GET,/api/v1/user/course/certificate,,get certificate
+yes,user,GET,/api/v1/user/course/{courseid}/{lessonid},,why lesson progress? Couldn’t it be course 
+yes,user,POST,/api/v1/user/become-instructor,read uid from req.user,become instructor
+yes,instructor,GET,/api/v1/instructor,,get instructor profile
+yes,instructor,PATCH,/api/v1/instructor,,"edit instructor profile (social links, cert. etc)"
+yes,instructor,POST,/api/v1/instructor/course,multiple data,create course
+yes,instructor,PATCH,/api/v1/instructor/course,,update course
+yes,instructor,DELETE,/api/v1/instructor/{courseid},,delete course
+yes,instructor,GET,/api/v1/instructor/course,,get course
+yes,instructor,POST,/api/v1/instructor/course/{courseid}/section,{courseID}+ multiple data,course - create section
+yes,instructor,PATCH,/api/v1/instructor/course/{courseid}/section,{sectionID} + multiple data,course - upd section
+yes,instructor,DELETE,/api/v1/instructor/course/{courseid}/{sectionid},,course - del section
+yes,instructor,POST,/api/v1/instructor/course/{courseid}/lesson,,co - sec - createLessons
+yes,instructor,PATCH,/api/v1/instructor/course/{courseid}/lesson,"{sectionID, lessonid}",co - sec - updateLessons
+yes,instructor,DELETE,/api/v1/instructor/course/{courseid}/{sectionid}/{lessonid},,co - sec - delLessons

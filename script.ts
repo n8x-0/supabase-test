@@ -20,12 +20,8 @@ let imgSrc: string | undefined;
 (document.querySelector("#imageInp") as HTMLInputElement).addEventListener("change", (e) => {
     const target = e.target as HTMLInputElement
     if (target.files && target.files[0]) {
-        const file = target.files[0]
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            imgSrc = event.target?.result as string;
-        };
-        reader.readAsDataURL(file);
+        const file = target.files[0];
+        imgSrc = URL.createObjectURL(file);
     }
 })
 
@@ -47,6 +43,7 @@ form.onsubmit = (e) => {
         skills2: skills2.value,
         skills3: skills3.value,
     }
+
     if(imgSrc){
         resumeData.imgSrc = imgSrc;
     }
@@ -61,7 +58,7 @@ form.onsubmit = (e) => {
 const renderData = (data: ResData) => {
     const resumeOutputCont = document.querySelector("#resumeOutput") as HTMLDivElement
     console.log(data);
-    
+
     resumeOutputCont.innerHTML = `
         <div class="template" contenteditable="true">
         <div class="resume">
@@ -104,4 +101,3 @@ const renderData = (data: ResData) => {
     </div>
     `
 }
-
